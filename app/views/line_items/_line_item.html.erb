@@ -1,0 +1,5 @@
+<td><%= line_item.item.title %></td>
+<td><%= line_item.item.price %></td>
+<td><img src="<%= line_item.item.image_url %>"></img></td>
+<td><a href='<%= item_path(line_item.item) %>'>View Item</a></td>
+<td><%= line_item.user.name %></td>
