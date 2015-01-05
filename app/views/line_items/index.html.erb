@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <h3>Items</h3>
+    <table class="table">
+      <thead>
+        <td>Name</td>
+        <td>Price</td>
+        <td>Thumbnail</td>
+        <td>Item Detail</td>
+        <td>Liked By</td>
+      </thead>
+      <tbody>
+        <% if @line_items.count > 0 %>
+          <% @line_items.each do |line_item| %>
+          <tr>
+            <%= render line_item %>
+          </tr>
+          <% end %>
+        <% else %>
+          Nobody has liked anything.
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
