@@ -17,6 +17,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'sendgrid'
 group :development do
+  gem 'web-console', '~> 2.0'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'capistrano', '~> 3.0.1'
