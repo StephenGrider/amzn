@@ -7,3 +7,12 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
+
+items = Item.create([
+  {
+    title: 'Polo Ralph Lauren Mens Vaughn Ankle-High Fabric Tennis Shoe',
+    description: '',
+    price: '42.00',
+    image_url: 'http://ecx.images-amazon.com/images/I/414PC7rRutL._US40_.jpg'
+  }
+])
