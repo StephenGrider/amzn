@@ -2,8 +2,8 @@ class CreateLineItems < ActiveRecord::Migration
   def change
     create_table :line_items do |t|
       t.timestamps null: false
-      t.references :item, index: true
-      t.references :user, index: true
+      t.integer :item_id, index: true
+      t.integer :user_id, index: true
     end
   end
 end
