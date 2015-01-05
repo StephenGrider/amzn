@@ -1,4 +1,4 @@
-class ItemView
+class Amzn.ItemsView
   constructor: ->
     $('.like').click @onLikeClick
     
@@ -12,6 +12,3 @@ class ItemView
     $item.parent().find('.unlike').removeClass('hidden')
     $item.addClass('hidden')
 
-$( ->
-  new ItemView()
-)
