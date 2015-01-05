@@ -1,6 +1,6 @@
 class LineItemsController < ApplicationController
   def index
-    @line_items = LineItem.all
+    @line_items = LineItem.paginate(:page => params[:page])
   end
   
   def create

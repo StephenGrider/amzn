@@ -11,16 +11,17 @@
           <td>Like This!</td>
         </thead>
         <% @items.each do |item| %>
-        <tr data-id=<%= item.id %>>
-          <%= render item %>
-          <td><a href='<%= item_path(item) %>'>View Item</a></td>
-          <td>
-            <button class="btn btn-primary like">Like</button>
-            <button class="btn btn-warning unlike hidden">Unlike</button>
-          </td>
-        </tr>
+          <tr data-id=<%= item.id %>>
+            <%= render item %>
+            <td><a href='<%= item_path(item) %>'>View Item</a></td>
+            <td>
+              <button class="btn btn-primary like">Like</button>
+              <button class="btn btn-warning unlike hidden">Unlike</button>
+            </td>
+          </tr>
         <% end %>
       </tbody>
     </table>
+    <%= will_paginate @items %>
   </div>
 </div>

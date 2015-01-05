@@ -8,6 +8,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'will_paginate', '~> 3.0.6'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
@@ -17,7 +19,6 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'sendgrid'
 group :development do
-  gem 'web-console', '~> 2.0'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'capistrano', '~> 3.0.1'
