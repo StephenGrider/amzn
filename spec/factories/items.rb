@@ -1,9 +1,8 @@
 FactoryGirl.define do
   factory :item do
-    description "MyString"
-price "MyString"
-image_url "MyString"
-url "MyString"
+    description { Faker::Lorem.sentence }
+    price { Faker::Number.number(2) }
+    image_url { Faker::Internet.url }
+    url { Faker::Internet.url }
   end
-
 end
