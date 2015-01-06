@@ -15,8 +15,12 @@
             <%= render item %>
             <td><a href='<%= item_path(item) %>'>View Item</a></td>
             <td>
-              <button class="btn btn-primary like">Like</button>
-              <button class="btn btn-warning unlike hidden">Unlike</button>
+              <button class="btn btn-primary like <%= 'hidden' if item.is_liked?(current_user) %>">
+                Like
+              </button>
+              <button class="btn btn-warning unlike <%= 'hidden' unless item.is_liked?(current_user) %>">
+                Unlike
+              </button>
             </td>
           </tr>
         <% end %>

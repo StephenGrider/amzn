@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :items, :only => [:index, :show]
-  resources :line_items, :only => [:index, :create]
+  resources :line_items, :only => [:index, :create, :destroy]
 end
