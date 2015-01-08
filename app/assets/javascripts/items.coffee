@@ -6,7 +6,7 @@ class Amzn.ItemsView
   onLikeClick: (e) =>
     $item = $(e.target)
     id = $item.closest('tr').data('id')
-    $.post('/line_items', { item_id: id })
+    $.post('/api/v1/line_items', { item_id: id })
       .done( => @onLikeDone($item))
       
   onLikeDone: ($item) =>
@@ -18,7 +18,7 @@ class Amzn.ItemsView
     id = $item.closest('tr').data('id')
     $.ajax
       type: 'DELETE'
-      url: "/line_items/#{id}"
+      url: "api/v1/line_items/#{id}"
       success: => @onUnlikeDone($item)
       
   onUnlikeDone: ($item) =>
