@@ -18,12 +18,12 @@ module Api
       end
       
       def destroy
-        line_item = LineItem.find(params[:id])
+        line_item = LineItem.find_by_id(params[:id])
         if line_item.can_destroy?(current_user)
           line_item.destroy
         end
         
-        render json: line_item
+        render json: { line_item: line_item }
       end
       
       private
