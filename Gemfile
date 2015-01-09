@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'will_paginate', '~> 3.0.6'
+gem 'delayed_job_active_record'
 
 group :development, :test do
   gem 'byebug'
@@ -29,6 +30,7 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
+  gem 'pry'
   gem 'hub', :require=>nil
   gem 'quiet_assets'
   gem 'rails_layout'
