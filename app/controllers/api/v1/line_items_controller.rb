@@ -2,18 +2,18 @@ module Api
   module V1
     class LineItemsController < ApplicationController
       def index
-        @line_items = LineItem.paginate(:page => params[:page])
+        @line_items = LineItem.paginate(page: params[:page])
         render json: @line_items
       end
       
       def create
-        line_item = current_user.line_items.new(params[:line_item])
-        line_item.item = Item.where(params[:line_item][:item_id])
+        line_item = current_user.line_items.build()
+        line_item.item = Item.find_by_id(line_item_params[:item_id])
         
-        if line_item.save
-          render json: line_item
+        if line_item.save && current_user.id == line_item.user_id
+          render json: { line_item: line_item }
         else
-          render :json => { errors: line_item.errors }
+          render json: { errors: line_item.errors }, status: 422
         end
       end
       
@@ -24,6 +24,12 @@ module Api
         end
         
         render json: line_item
+      end
+      
+      private
+      
+      def line_item_params
+        params.require(:line_item).permit(:item_id, :user_id)
       end
     end
   end
