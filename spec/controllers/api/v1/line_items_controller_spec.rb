@@ -61,19 +61,33 @@ describe Api::V1::LineItemsController, :type => :controller do
         }.to change(LineItem, :count).by(0)
       end
       
-      it 'renders nothing' do
-        
+      it '422s' do
+        post :create, line_item: attrs
+        expect(response.status).to eq(422)
       end
     end
   end
   
   describe '#destroy' do
-    it 'deletes' do
-      
+    before do
+      sign_in @user
+      @line_item = FactoryGirl.create(:line_item)
+      @line_item.user_id = @user.id
+      @line_item.save
     end
     
-    it 'renders nothing' do
+    it 'destroys the model' do      
+      expect{
+        delete :destroy, id: @line_item.id
+      }.to change(LineItem, :count).by(-1)
+    end
+    
+    it 'renders the model' do
+      delete :destroy, id: @line_item.id
       
+      parsed_response = JSON.parse(response.body)
+      expect(parsed_response["line_item"]["user_id"]).to eq(@line_item.user_id)
+      expect(parsed_response["line_item"]["item_id"]).to eq(@line_item.item_id)
     end
   end
 end
