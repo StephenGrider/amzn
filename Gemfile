@@ -10,6 +10,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'will_paginate', '~> 3.0.6'
 gem 'delayed_job_active_record'
+gem 'daemons'
+gem 'amazon-ecs'
 
 group :development, :test do
   gem 'byebug'
