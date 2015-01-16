@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150109170159) do
+ActiveRecord::Schema.define(version: 20150116034306) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -34,9 +34,13 @@ ActiveRecord::Schema.define(version: 20150109170159) do
     t.string   "price"
     t.string   "image_url"
     t.string   "url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "title"
+    t.string   "asin"
+    t.string   "brand"
+    t.string   "wishlist_url"
+    t.string   "tell_friend_url"
   end
 
   create_table "line_items", force: :cascade do |t|
