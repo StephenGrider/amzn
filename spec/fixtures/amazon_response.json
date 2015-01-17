@@ -1,0 +1,453 @@
+{
+  "ItemSearchResponse": {
+    "OperationRequest": {
+      "HTTPHeaders": {
+        "Header": {
+          "Name": "UserAgent",
+          "Value": "Ruby"
+        }
+      },
+      "RequestId": "8f2fedcc-bc18-46ec-9c1c-a6a8a753a4c1",
+      "Arguments": {
+        "Argument": [
+          {
+            "Name": "Operation",
+            "Value": "ItemSearch"
+          },
+          {
+            "Name": "Service",
+            "Value": "AWSECommerceService"
+          },
+          {
+            "Name": "Signature",
+            "Value": "GMHz3mcLsRrnvrHrg9ddCKILn25MkUHQRd0zeU+0l6U="
+          },
+          {
+            "Name": "AssociateTag",
+            "Value": "codethiscod02-20"
+          },
+          {
+            "Name": "Version",
+            "Value": "2011-08-01"
+          },
+          {
+            "Name": "Keywords",
+            "Value": "shoes"
+          },
+          {
+            "Name": "AWSAccessKeyId",
+            "Value": "AKIAIQW3RNVVQNECDDIA"
+          },
+          {
+            "Name": "Timestamp",
+            "Value": "2015-01-17T02:40:07Z"
+          },
+          {
+            "Name": "ResponseGroup",
+            "Value": "Offers,ItemAttributes,Images"
+          },
+          {
+            "Name": "SearchIndex",
+            "Value": "Shoes"
+          }
+        ]
+      },
+      "RequestProcessingTime": "0.9013760000000000"
+    },
+    "Items": {
+      "Request": {
+        "IsValid": "True",
+        "ItemSearchRequest": {
+          "Keywords": "shoes",
+          "ResponseGroup": [
+            "Offers",
+            "ItemAttributes",
+            "Images"
+          ],
+          "SearchIndex": "Shoes"
+        }
+      },
+      "TotalResults": "554423",
+      "TotalPages": "55443",
+      "MoreSearchResultsUrl": "http://www.amazon.com/gp/redirect.html?camp=2025&creative=386001&location=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fsearch%3Fkeywords%3Dshoes%26url%3Dsearch-alias%253Dshoes&linkCode=xm2&tag=codethiscod02-20&SubscriptionId=AKIAIQW3RNVVQNECDDIA",
+      "Item": [
+        {
+          "ASIN": "B0088WEN1O",
+          "ParentASIN": "B0088WEN1O",
+          "DetailPageURL": "http://www.amazon.com/ASICS-GEL-VENTURE-4-M-Womens-GEL-Venture%C2%AE/dp/B0088WEN1O%3FSubscriptionId%3DAKIAIQW3RNVVQNECDDIA%26tag%3Dcodethiscod02-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0088WEN1O",
+          "ItemLinks": {
+            "ItemLink": [
+              {
+                "Description": "Technical Details",
+                "URL": "http://www.amazon.com/ASICS-GEL-VENTURE-4-M-Womens-GEL-Venture%C2%AE/dp/tech-data/B0088WEN1O%3FSubscriptionId%3DAKIAIQW3RNVVQNECDDIA%26tag%3Dcodethiscod02-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0088WEN1O"
+              },
+              {
+                "Description": "Add To Baby Registry",
+                "URL": "http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB0088WEN1O%26SubscriptionId%3DAKIAIQW3RNVVQNECDDIA%26tag%3Dcodethiscod02-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0088WEN1O"
+              },
+              {
+                "Description": "Add To Wedding Registry",
+                "URL": "http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB0088WEN1O%26SubscriptionId%3DAKIAIQW3RNVVQNECDDIA%26tag%3Dcodethiscod02-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0088WEN1O"
+              },
+              {
+                "Description": "Add To Wishlist",
+                "URL": "http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB0088WEN1O%26SubscriptionId%3DAKIAIQW3RNVVQNECDDIA%26tag%3Dcodethiscod02-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0088WEN1O"
+              },
+              {
+                "Description": "Tell A Friend",
+                "URL": "http://www.amazon.com/gp/pdp/taf/B0088WEN1O%3FSubscriptionId%3DAKIAIQW3RNVVQNECDDIA%26tag%3Dcodethiscod02-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0088WEN1O"
+              },
+              {
+                "Description": "All Customer Reviews",
+                "URL": "http://www.amazon.com/review/product/B0088WEN1O%3FSubscriptionId%3DAKIAIQW3RNVVQNECDDIA%26tag%3Dcodethiscod02-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0088WEN1O"
+              },
+              {
+                "Description": "All Offers",
+                "URL": "http://www.amazon.com/gp/offer-listing/B0088WEN1O%3FSubscriptionId%3DAKIAIQW3RNVVQNECDDIA%26tag%3Dcodethiscod02-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0088WEN1O"
+              }
+            ]
+          },
+          "SmallImage": {
+            "URL": "http://ecx.images-amazon.com/images/I/51GMGsRrXXL._SL75_.jpg",
+            "Height": "43",
+            "Width": "75"
+          },
+          "MediumImage": {
+            "URL": "http://ecx.images-amazon.com/images/I/51GMGsRrXXL._SL160_.jpg",
+            "Height": "91",
+            "Width": "160"
+          },
+          "LargeImage": {
+            "URL": "http://ecx.images-amazon.com/images/I/51GMGsRrXXL.jpg",
+            "Height": "285",
+            "Width": "500"
+          },
+          "ImageSets": {
+            "ImageSet": [
+              {
+                "Category": "primary",
+                "SwatchImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51GMGsRrXXL._SL30_.jpg",
+                  "Height": "17",
+                  "Width": "30"
+                },
+                "SmallImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51GMGsRrXXL._SL75_.jpg",
+                  "Height": "43",
+                  "Width": "75"
+                },
+                "ThumbnailImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51GMGsRrXXL._SL75_.jpg",
+                  "Height": "43",
+                  "Width": "75"
+                },
+                "TinyImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51GMGsRrXXL._SL110_.jpg",
+                  "Height": "63",
+                  "Width": "110"
+                },
+                "MediumImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51GMGsRrXXL._SL160_.jpg",
+                  "Height": "91",
+                  "Width": "160"
+                },
+                "LargeImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51GMGsRrXXL.jpg",
+                  "Height": "285",
+                  "Width": "500"
+                }
+              },
+              {
+                "Category": "swatch",
+                "SwatchImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51GMGsRrXXL._SL30_.jpg",
+                  "Height": "17",
+                  "Width": "30"
+                },
+                "SmallImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51GMGsRrXXL._SL75_.jpg",
+                  "Height": "43",
+                  "Width": "75"
+                },
+                "ThumbnailImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51GMGsRrXXL._SL75_.jpg",
+                  "Height": "43",
+                  "Width": "75"
+                },
+                "TinyImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51GMGsRrXXL._SL110_.jpg",
+                  "Height": "63",
+                  "Width": "110"
+                },
+                "MediumImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51GMGsRrXXL._SL160_.jpg",
+                  "Height": "91",
+                  "Width": "160"
+                },
+                "LargeImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51GMGsRrXXL.jpg",
+                  "Height": "285",
+                  "Width": "500"
+                }
+              },
+              {
+                "Category": "variant",
+                "SwatchImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51cdB59E-KL._SL30_.jpg",
+                  "Height": "30",
+                  "Width": "22"
+                },
+                "SmallImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51cdB59E-KL._SL75_.jpg",
+                  "Height": "75",
+                  "Width": "55"
+                },
+                "ThumbnailImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51cdB59E-KL._SL75_.jpg",
+                  "Height": "75",
+                  "Width": "55"
+                },
+                "TinyImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51cdB59E-KL._SL110_.jpg",
+                  "Height": "110",
+                  "Width": "81"
+                },
+                "MediumImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51cdB59E-KL._SL160_.jpg",
+                  "Height": "160",
+                  "Width": "117"
+                },
+                "LargeImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51cdB59E-KL.jpg",
+                  "Height": "500",
+                  "Width": "366"
+                }
+              },
+              {
+                "Category": "variant",
+                "SwatchImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/41aawvKR7ML._SL30_.jpg",
+                  "Height": "12",
+                  "Width": "30"
+                },
+                "SmallImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/41aawvKR7ML._SL75_.jpg",
+                  "Height": "30",
+                  "Width": "75"
+                },
+                "ThumbnailImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/41aawvKR7ML._SL75_.jpg",
+                  "Height": "30",
+                  "Width": "75"
+                },
+                "TinyImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/41aawvKR7ML._SL110_.jpg",
+                  "Height": "43",
+                  "Width": "110"
+                },
+                "MediumImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/41aawvKR7ML._SL160_.jpg",
+                  "Height": "63",
+                  "Width": "160"
+                },
+                "LargeImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/41aawvKR7ML.jpg",
+                  "Height": "197",
+                  "Width": "500"
+                }
+              },
+              {
+                "Category": "variant",
+                "SwatchImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51aYlZ9okcL._SL30_.jpg",
+                  "Height": "30",
+                  "Width": "26"
+                },
+                "SmallImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51aYlZ9okcL._SL75_.jpg",
+                  "Height": "75",
+                  "Width": "65"
+                },
+                "ThumbnailImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51aYlZ9okcL._SL75_.jpg",
+                  "Height": "75",
+                  "Width": "65"
+                },
+                "TinyImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51aYlZ9okcL._SL110_.jpg",
+                  "Height": "110",
+                  "Width": "95"
+                },
+                "MediumImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51aYlZ9okcL._SL160_.jpg",
+                  "Height": "160",
+                  "Width": "138"
+                },
+                "LargeImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51aYlZ9okcL.jpg",
+                  "Height": "500",
+                  "Width": "431"
+                }
+              },
+              {
+                "Category": "variant",
+                "SwatchImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51ltEM%2BlKZL._SL30_.jpg",
+                  "Height": "14",
+                  "Width": "30"
+                },
+                "SmallImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51ltEM%2BlKZL._SL75_.jpg",
+                  "Height": "34",
+                  "Width": "75"
+                },
+                "ThumbnailImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51ltEM%2BlKZL._SL75_.jpg",
+                  "Height": "34",
+                  "Width": "75"
+                },
+                "TinyImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51ltEM%2BlKZL._SL110_.jpg",
+                  "Height": "50",
+                  "Width": "110"
+                },
+                "MediumImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51ltEM%2BlKZL._SL160_.jpg",
+                  "Height": "72",
+                  "Width": "160"
+                },
+                "LargeImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/51ltEM%2BlKZL.jpg",
+                  "Height": "225",
+                  "Width": "500"
+                }
+              },
+              {
+                "Category": "variant",
+                "SwatchImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/415WWXXh-%2BL._SL30_.jpg",
+                  "Height": "13",
+                  "Width": "30"
+                },
+                "SmallImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/415WWXXh-%2BL._SL75_.jpg",
+                  "Height": "32",
+                  "Width": "75"
+                },
+                "ThumbnailImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/415WWXXh-%2BL._SL75_.jpg",
+                  "Height": "32",
+                  "Width": "75"
+                },
+                "TinyImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/415WWXXh-%2BL._SL110_.jpg",
+                  "Height": "48",
+                  "Width": "110"
+                },
+                "MediumImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/415WWXXh-%2BL._SL160_.jpg",
+                  "Height": "69",
+                  "Width": "160"
+                },
+                "LargeImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/415WWXXh-%2BL.jpg",
+                  "Height": "216",
+                  "Width": "500"
+                }
+              },
+              {
+                "Category": "variant",
+                "SwatchImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/41MMiRAcCBL._SL30_.jpg",
+                  "Height": "10",
+                  "Width": "30"
+                },
+                "SmallImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/41MMiRAcCBL._SL75_.jpg",
+                  "Height": "26",
+                  "Width": "75"
+                },
+                "ThumbnailImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/41MMiRAcCBL._SL75_.jpg",
+                  "Height": "26",
+                  "Width": "75"
+                },
+                "TinyImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/41MMiRAcCBL._SL110_.jpg",
+                  "Height": "38",
+                  "Width": "110"
+                },
+                "MediumImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/41MMiRAcCBL._SL160_.jpg",
+                  "Height": "56",
+                  "Width": "160"
+                },
+                "LargeImage": {
+                  "URL": "http://ecx.images-amazon.com/images/I/41MMiRAcCBL.jpg",
+                  "Height": "175",
+                  "Width": "500"
+                }
+              }
+            ]
+          },
+          "ItemAttributes": {
+            "Binding": "Apparel",
+            "Brand": "ASICS",
+            "CatalogNumberList": {
+              "CatalogNumberListElement": [
+                "ps269469",
+                "GEL-VENTURE 4-M"
+              ]
+            },
+            "Color": "Mallard/Black/Yellow",
+            "Department": "mens",
+            "Feature": [
+              "Removable insole",
+              "Style number T346N represents Width model",
+              "Style number T333N represents regular non-width medium style",
+              "Width Should be determined by Style number found on the box label or on the Tongue of the shoe."
+            ],
+            "ItemDimensions": {
+              "Weight": "66"
+            },
+            "Label": "ASICS",
+            "ListPrice": {
+              "Amount": "6000",
+              "CurrencyCode": "USD",
+              "FormattedPrice": "$60.00"
+            },
+            "Manufacturer": "ASICS",
+            "Model": "GEL-VENTURE 4-M",
+            "MPN": "T333N",
+            "NumberOfItems": "1",
+            "PackageDimensions": {
+              "Height": "400",
+              "Length": "1200",
+              "Weight": "200",
+              "Width": "800"
+            },
+            "PackageQuantity": "1",
+            "PartNumber": "T333N",
+            "ProductGroup": "Shoes",
+            "ProductTypeName": "SHOES",
+            "Publisher": "ASICS",
+            "Size": "varies",
+            "Studio": "ASICS",
+            "Title": "ASICS Women's GEL-Venture® 4"
+          },
+          "OfferSummary": {
+            "TotalNew": "0",
+            "TotalUsed": "0",
+            "TotalCollectible": "0",
+            "TotalRefurbished": "0"
+          },
+          "Offers": {
+            "TotalOffers": "0",
+            "TotalOfferPages": "0",
+            "MoreOffersUrl": "0"
+          }
+        }
+      ]
+    }
+  }
+}
