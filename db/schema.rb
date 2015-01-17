@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150116034306) do
+ActiveRecord::Schema.define(version: 20150117224630) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -52,6 +52,17 @@ ActiveRecord::Schema.define(version: 20150116034306) do
 
   add_index "line_items", ["item_id"], name: "index_line_items_on_item_id"
   add_index "line_items", ["user_id"], name: "index_line_items_on_user_id"
+
+  create_table "logs", force: :cascade do |t|
+    t.text     "json"
+    t.text     "message"
+    t.text     "asin"
+    t.integer  "page_fetched"
+    t.integer  "total_pages"
+    t.boolean  "success"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
