@@ -22,6 +22,9 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'sendgrid'
 group :development do
+  gem 'pry'
+  gem 'pry-rescue'
+  gem 'pry-stack_explorer'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'capistrano', '~> 3.0.1'
@@ -32,7 +35,6 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
-  gem 'pry'
   gem 'hub', :require=>nil
   gem 'quiet_assets'
   gem 'rails_layout'
