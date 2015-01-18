@@ -1,18 +1,34 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-user = CreateAdminService.new.call
-puts 'CREATED ADMIN USER: ' << user.email
+SearchNode.create(
+  enabled: true,
+  amazon_id: 679341011,
+  category: "Basketball",
+  parent_category: "Athletic"
+)
 
-items = Item.create([
-  {
-    title: 'Polo Ralph Lauren Mens Vaughn Ankle-High Fabric Tennis Shoe',
-    description: '',
-    price: '42.00',
-    image_url: 'http://ecx.images-amazon.com/images/I/414PC7rRutL._US40_.jpg'
-  }
-])
+SearchNode.create(
+  enabled: true,
+  amazon_id: 679360011,
+  category: "Running",
+  parent_category: "Athletic"
+)
+
+SearchNode.create(
+  enabled: true,
+  amazon_id: 679377011,
+  category: "Walking",
+  parent_category: "Athletic"
+)
+
+SearchNode.create(
+  enabled: true,
+  amazon_id: 679369011,
+  category: "Skateboard",
+  parent_category: "Athletic"
+)
+
+SearchNode.create(
+  enabled: true,
+  amazon_id: 679374011,
+  category: "Tennis",
+  parent_category: "Athletic"
+)

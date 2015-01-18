@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150118012224) do
+ActiveRecord::Schema.define(version: 20150118015512) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20150118012224) do
     t.string   "brand"
     t.string   "wishlist_url"
     t.string   "tell_friend_url"
+    t.integer  "search_node_id"
   end
 
   create_table "line_items", force: :cascade do |t|
@@ -60,16 +61,18 @@ ActiveRecord::Schema.define(version: 20150118012224) do
     t.integer  "page_fetched"
     t.integer  "total_pages"
     t.boolean  "success"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "search_node_id"
   end
 
   create_table "search_nodes", force: :cascade do |t|
     t.boolean  "enabled"
-    t.string   "name"
-    t.integer  "identifier"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "category"
+    t.string   "parent_category"
+    t.integer  "amazon_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "users", force: :cascade do |t|

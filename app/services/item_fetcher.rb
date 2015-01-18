@@ -4,16 +4,17 @@ module Services
       res = Amazon::Ecs.item_search(options[:search_string], 
         { response_group: 'OfferFull,Images,ItemAttributes', browse_node: options[:node] })
       
-      create_items(res)
+      create_items(res, options[:node])
     end
     
-    def create_items(res)
+    def create_items(res, node_id)
       res.items.each do |response_item|
         item = Item.find_or_create_by(asin: get_asin(response_item)) 
         log = Log.new(
           success: true,
           total_pages: res.total_pages,
-          page_fetched: res.item_page
+          page_fetched: res.item_page,
+          search_node_id: SearchNode.find_by_amazon_id(node_id).id
         )
         
         begin
@@ -25,9 +26,9 @@ module Services
           item.price = get_price(response_item)
           item.wishlist_url = get_action_url(response_item, "Add To Wishlist")
           item.tell_friend_url = get_action_url(response_item, "Tell A Friend")
+          item.search_node_id = SearchNode.find_by_amazon_id(node_id).id
           item.save!
         rescue Exception => e
-          log.json = Hash.from_xml(response_item.to_s)
           log.message = e.message
           log.success = false
         end

@@ -1,6 +1,7 @@
 class Item < ActiveRecord::Base
   has_many :line_items
   has_many :users, :through => :line_items
+  belongs_to :search_node
   
   validates :title, presence: true
   validates :image_url, presence: true
@@ -12,5 +13,13 @@ class Item < ActiveRecord::Base
   
   def is_liked?(user)
     user.items.include?(self)
+  end
+  
+  def category
+    search_node.category
+  end
+  
+  def parent_category
+    search_node.parent_category
   end
 end
