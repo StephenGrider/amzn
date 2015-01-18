@@ -2,7 +2,7 @@ module Services
   class ItemFetcher
     def fetch_items(options)
       res = Amazon::Ecs.item_search(options[:search_string], 
-        { response_group: 'OfferFull,Images,ItemAttributes', search_index: 'Shoes'})
+        { response_group: 'OfferFull,Images,ItemAttributes', browse_node: options[:node] })
       
       create_items(res)
     end
