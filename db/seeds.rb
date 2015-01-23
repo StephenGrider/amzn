@@ -32,3 +32,31 @@ SearchNode.create(
   category: "Tennis",
   parent_category: "Athletic"
 )
+
+SearchNode.create(
+  enabled: true,
+  amazon_id: 684423011,
+  category: "Dress & Evening Flats",
+  parent_category: "Flats"
+)
+
+SearchNode.create(
+  enabled: true,
+  amazon_id: 679401011,
+  category: "Mary-Jane Flats",
+  parent_category: "Flats"
+)
+
+SearchNode.create(
+  enabled: true,
+  amazon_id: 679403011,
+  category: "Slingback Flats",
+  parent_category: "Flats"
+)
+
+SearchNode.create(
+  enabled: true,
+  amazon_id: 683100011,
+  category: "T-Strap Flats",
+  parent_category: "Flats"
+)
