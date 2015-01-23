@@ -4,6 +4,8 @@ module Services
       res = Amazon::Ecs.item_search(options[:search_string], 
         { response_group: 'OfferFull,Images,ItemAttributes', browse_node: options[:node] })
       
+      log_empty_response(options) if res.items.length == 0
+      
       create_items(res, options[:node])
     end
     
@@ -75,6 +77,13 @@ module Services
     
     def get_title(item)
       item.get_element('ItemAttributes').get('Title')
+    end
+    
+    def log_empty_response(options)
+      Log.create(
+        json: options.to_json,
+        message: "Empty response"
+      )
     end
   end
 end
