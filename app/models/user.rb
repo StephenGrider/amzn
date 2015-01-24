@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
          
   has_many :line_items
   has_many :items, :through => :line_items
+  
+  def self.authenticate(imei)
+    User.find_or_create_by(imei: imei)
+  end
 end
