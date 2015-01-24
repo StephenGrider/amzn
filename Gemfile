@@ -12,7 +12,6 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'delayed_job_active_record'
 gem 'daemons'
 gem 'amazon-ecs'
-gem 'sprockets-coffee-react', '~> 2.1'
 gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
