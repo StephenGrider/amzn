@@ -2,7 +2,7 @@ class LineItem < ActiveRecord::Base
   belongs_to :user
   belongs_to :item
   
-  validates_presence_of :user_id, :item_id
+  validates_presence_of :user_id, :item_id, :liked
   validates :user_id, uniqueness: { :scope => :item_id }
   
   def can_destroy?(user)
