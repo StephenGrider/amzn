@@ -1,6 +1,6 @@
 module Api
   module V1
-    class LineItemsController < ApplicationController
+    class LineItemsController < Api::V1::ApiController
       def index
         @line_items = LineItem.paginate(page: params[:page])
         render json: @line_items
