@@ -7,15 +7,17 @@ describe Api::V1::LineItemsController, :type => :controller do
   end
   
   describe '#index' do    
-    it 'returns all line_items' do
-      FactoryGirl.create_list(:line_item, 5)
-      
-      get :index
-      
-      parsed_response = JSON.parse(response.body)
-      expect(parsed_response.length).to eq(5)
-      expect(parsed_response.first['user_id']).to_not be_nil
-      expect(parsed_response.first['item_id']).to_not be_nil
+    describe 'unfiltered' do
+      it 'returns all line_items' do
+        FactoryGirl.create_list(:line_item, 5)
+        
+        get :index
+        
+        parsed_response = JSON.parse(response.body)
+        expect(parsed_response.length).to eq(5)
+        expect(parsed_response.first['user_id']).to_not be_nil
+        expect(parsed_response.first['item_id']).to_not be_nil
+      end
     end
   end
   
