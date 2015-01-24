@@ -1,14 +1,14 @@
-Warden::Strategies.add(:auth_by_imei) do 
+Warden::Strategies.add(:auth_by_guid) do 
   def valid? 
-    imei_token.present?
+    guid_token.present?
   end 
   
   def authenticate!
-    u = User.authenticate(imei_token)
+    u = User.authenticate(guid_token)
     u.nil? ? fail!("Could not log in") : success!(u)
   end
   
-  def imei_token
-    request.env["HTTP_IMEI_TOKEN"]
+  def guid_token
+    request.env["HTTP_guid_TOKEN"]
   end
 end 

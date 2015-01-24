@@ -235,7 +235,7 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
   config.warden do |manager|
-    manager.default_strategies(scope: :user).unshift :auth_by_imei
+    manager.default_strategies(scope: :user).unshift :auth_by_guid
   end
 
   # ==> Mountable engine configurations
