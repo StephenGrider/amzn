@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :line_items
   has_many :items, :through => :line_items
   
-  def self.authenticate(imei)
-    User.find_or_create_by(imei: imei)
+  def self.authenticate(guid)
+    User.find_or_create_by(guid: guid)
   end
 end
