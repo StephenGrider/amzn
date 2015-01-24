@@ -7,10 +7,10 @@ module Api
       end
       
       def create
-        line_item = User.first.line_items.build()
+        line_item = current_user.line_items.build(liked: line_item_params[:liked])
         line_item.item = Item.find_by_id(line_item_params[:item_id])
         
-        if line_item.save && User.first.id == line_item.user_id
+        if line_item.save && current_user.id == line_item.user_id
           render json: { line_item: line_item }
         else
           render json: { errors: line_item.errors }, status: 422
@@ -29,7 +29,7 @@ module Api
       private
       
       def line_item_params
-        params.require(:line_item).permit(:item_id)
+        params.require(:line_item).permit(:item_id, :liked)
       end
     end
   end

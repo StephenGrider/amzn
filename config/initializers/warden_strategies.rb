@@ -9,6 +9,6 @@ Warden::Strategies.add(:auth_by_guid) do
   end
   
   def guid_token
-    request.env["HTTP_guid_TOKEN"]
+    request.env["HTTP_GUID_TOKEN"]
   end
 end 

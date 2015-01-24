@@ -13,13 +13,20 @@ class Item < ActiveRecord::Base
   validates :wishlist_url, presence: true
   validates :tell_friend_url, presence: true
   
-  scope :unseen, lambda { |user|
+  scope :unrated, lambda { |user|
     joins("left outer join line_items as i on items.id = i.item_id")
     .where("i.user_id is not ?", user.id)
   }
   
   scope :liked_by, lambda { |user|
     joins("left outer join line_items as i on items.id = i.item_id")
+    .where("i.liked is true")
+    .where("i.user_id is ?", user.id)
+  }
+  
+  scope :disliked_by, lambda { |user|
+    joins("left outer join line_items as i on items.id = i.item_id")
+    .where("i.liked is false")
     .where("i.user_id is ?", user.id)
   }
   
