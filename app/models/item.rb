@@ -12,15 +12,14 @@ class Item < ActiveRecord::Base
   validates :price, presence: true
   validates :wishlist_url, presence: true
   validates :tell_friend_url, presence: true
-  
-  scope :unrated, lambda { |user|
-    joins("left outer join line_items as i on items.id = i.item_id")
-    .where("i.user_id is not ?", user.id)
+
+  scope :unrated_by, lambda { |user|
+    where("not exists (select id from line_items where line_items.item_id = items.id AND line_items.user_id is ?)", user.id)
   }
   
   scope :liked_by, lambda { |user|
     joins("left outer join line_items as i on items.id = i.item_id")
-    .where("i.liked is true")
+    .where("i.liked is ?", true)
     .where("i.user_id is ?", user.id)
   }
   
