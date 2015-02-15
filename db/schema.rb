@@ -14,86 +14,86 @@
 ActiveRecord::Schema.define(version: 20150124212319) do
 
   create_table "delayed_jobs", force: :cascade do |t|
-    t.integer  "priority",   default: 0, null: false
-    t.integer  "attempts",   default: 0, null: false
-    t.text     "handler",                null: false
-    t.text     "last_error"
+    t.integer  "priority",   limit: 4,     default: 0, null: false
+    t.integer  "attempts",   limit: 4,     default: 0, null: false
+    t.text     "handler",    limit: 65535,             null: false
+    t.text     "last_error", limit: 65535
     t.datetime "run_at"
     t.datetime "locked_at"
     t.datetime "failed_at"
-    t.string   "locked_by"
-    t.string   "queue"
+    t.string   "locked_by",  limit: 255
+    t.string   "queue",      limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "items", force: :cascade do |t|
-    t.string   "description"
-    t.string   "price"
-    t.string   "image_url"
-    t.string   "url"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "title"
-    t.string   "asin"
-    t.string   "brand"
-    t.string   "wishlist_url"
-    t.string   "tell_friend_url"
-    t.integer  "search_node_id"
+    t.string   "description",     limit: 255
+    t.string   "price",           limit: 255
+    t.string   "image_url",       limit: 255
+    t.string   "url",             limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "title",           limit: 255
+    t.string   "asin",            limit: 255
+    t.string   "brand",           limit: 255
+    t.string   "wishlist_url",    limit: 255
+    t.string   "tell_friend_url", limit: 255
+    t.integer  "search_node_id",  limit: 4
   end
 
   create_table "line_items", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "item_id"
-    t.integer  "user_id"
-    t.boolean  "liked"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "item_id",    limit: 4
+    t.integer  "user_id",    limit: 4
+    t.boolean  "liked",      limit: 1
   end
 
-  add_index "line_items", ["item_id"], name: "index_line_items_on_item_id"
-  add_index "line_items", ["user_id"], name: "index_line_items_on_user_id"
+  add_index "line_items", ["item_id"], name: "index_line_items_on_item_id", using: :btree
+  add_index "line_items", ["user_id"], name: "index_line_items_on_user_id", using: :btree
 
   create_table "logs", force: :cascade do |t|
-    t.text     "json"
-    t.text     "message"
-    t.text     "asin"
-    t.integer  "page_fetched"
-    t.integer  "total_pages"
-    t.boolean  "success"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.integer  "search_node_id"
+    t.text     "json",           limit: 65535
+    t.text     "message",        limit: 65535
+    t.text     "asin",           limit: 65535
+    t.integer  "page_fetched",   limit: 4
+    t.integer  "total_pages",    limit: 4
+    t.boolean  "success",        limit: 1
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "search_node_id", limit: 4
   end
 
   create_table "search_nodes", force: :cascade do |t|
-    t.boolean  "enabled"
-    t.string   "category"
-    t.string   "parent_category"
-    t.integer  "amazon_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.boolean  "enabled",         limit: 1
+    t.string   "category",        limit: 255
+    t.string   "parent_category", limit: 255
+    t.integer  "amazon_id",       limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
-    t.string   "guid"
+    t.string   "name",                   limit: 255
+    t.string   "guid",                   limit: 255
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
