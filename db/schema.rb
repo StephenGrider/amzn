@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150124212319) do
+ActiveRecord::Schema.define(version: 20150217013437) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   limit: 4,     default: 0, null: false
@@ -71,9 +71,10 @@ ActiveRecord::Schema.define(version: 20150124212319) do
     t.boolean  "enabled",         limit: 1
     t.string   "category",        limit: 255
     t.string   "parent_category", limit: 255
-    t.integer  "amazon_id",       limit: 4
+    t.integer  "vendor_id",       limit: 4
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.string   "vendor",          limit: 255
   end
 
   create_table "users", force: :cascade do |t|
