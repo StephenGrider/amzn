@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.1.0'
 gem 'rails', '4.2.0'
-# gem 'sqlite3'
 gem 'mysql2'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -14,15 +13,17 @@ gem 'delayed_job_active_record'
 gem 'daemons'
 gem 'amazon-ecs'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'httparty'
+gem 'bootstrap-sass'
+gem 'devise'
+gem 'sendgrid'
+
 
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-gem 'bootstrap-sass'
-gem 'devise'
-gem 'sendgrid'
 group :development do
   gem 'pry'
   gem 'pry-rescue'

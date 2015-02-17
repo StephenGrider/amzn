@@ -140,6 +140,9 @@ GEM
       rspec (>= 2.99.0, < 4.0)
     hike (1.2.3)
     hitimes (1.2.2)
+    httparty (0.13.3)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     hub (1.12.4)
     i18n (0.7.0)
     interception (0.5)
@@ -167,6 +170,7 @@ GEM
     mini_portile (0.6.2)
     minitest (5.5.0)
     multi_json (1.10.1)
+    multi_xml (0.5.5)
     mysql2 (0.3.17)
     nenv (0.1.1)
     net-scp (1.2.1)
@@ -327,6 +331,7 @@ DEPENDENCIES
   guard-bundler
   guard-rails
   guard-rspec
+  httparty
   hub
   jbuilder (~> 2.0)
   jquery-rails
