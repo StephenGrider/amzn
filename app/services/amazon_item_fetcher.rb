@@ -13,7 +13,7 @@ module Services
       def create_items(res, node_id)
         res.items.each do |response_item|
           item = Item.find_or_create_by(asin: get_asin(response_item))
-          binding.pry
+
           log = Log.new(
             success: true,
             total_pages: res.total_pages,
