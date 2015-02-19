@@ -1,1 +1,7 @@
-admin controller
+<div class="row">
+  <%= form_tag("/admin/fetch", method: "post") do %>
+    <%= label_tag(:q, "Search by category:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>
