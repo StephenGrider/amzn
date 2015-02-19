@@ -9,7 +9,7 @@ module Services
             results_per_page: "100",
             category: options[:category],
             page: options[:page],
-            per_page: 1
+            per_page: 100
           }
         }
       end
@@ -27,15 +27,36 @@ module Services
         json = items(res)
 
         json.each do |response_item|
-          item = Item.find_or_create_by(asin: get_asin(response_item))
-          item.title = get_title(response_item)
-          item.price = get_price(response_item)
-          item.image_url = get_image_url(response_item)
-          item.url = get_url(response_item)
-          # item.brand = get_brand(response_item) TODO: fix brand/brand_id
 
-          item.save!
+          log = Log.new(
+            success: true
+            page_fetched: get_page(res)
+            total_pages: get_total_pages(res)
+          )
+
+          begin
+            item = Item.find_or_create_by(asin: get_asin(response_item))
+            item.title = get_title(response_item)
+            item.price = get_price(response_item)
+            item.image_url = get_image_url(response_item)
+            item.url = get_url(response_item)
+            # item.brand = get_brand(response_item) TODO: fix brand/brand_id
+            item.save!
+          rescue Exception => e
+            log.message = e.message
+            log.success = false
+          end
+
+          log.save
         end
+      end
+
+      def get_page(res)
+        res["parameters"].select { |param| param["name"] == "page" }.first["value"]
+      end
+
+      def get_total_pages(res)
+        (res["results"]["products"]["count"] / @req_opts["query"]["per_page"]).ceil
       end
 
       def items(res)
