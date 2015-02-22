@@ -20,6 +20,8 @@ module Amzn
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
 
+    config.autoload_paths += %W(#{config.root}/app/)
+    config.autoload_paths += Dir["#{config.root}/app/**/"]
 
     config.middleware.insert_before 0, "Rack::Cors" do
       allow do

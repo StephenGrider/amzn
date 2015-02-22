@@ -15,10 +15,13 @@ module Services
       end
 
       def do_request
+        old_count = Item.count
         res = HTTParty.get("http://popshops.com/v3/products.json", @req_opts)
         parse_response res
-        "done"
+        return Item.count - old_count
       end
+
+      handle_asynchronously :do_request
 
       private
 
@@ -29,8 +32,8 @@ module Services
         json.each do |response_item|
 
           log = Log.new(
-            success: true
-            page_fetched: get_page(res)
+            success: true,
+            page_fetched: get_page(res),
             total_pages: get_total_pages(res)
           )
 
@@ -56,7 +59,7 @@ module Services
       end
 
       def get_total_pages(res)
-        (res["results"]["products"]["count"] / @req_opts["query"]["per_page"]).ceil
+        (res["results"]["products"]["count"] / @req_opts[:query][:per_page]).ceil
       end
 
       def items(res)

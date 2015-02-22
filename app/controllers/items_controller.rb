@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  def index 
+  def index
     @items = Item.paginate(:page => params[:page])
   end
 
