@@ -11,7 +11,7 @@ class Item < ActiveRecord::Base
   validates :price, presence: true
 
   scope :unrated_by, lambda { |user|
-    where("not exists (select id from line_items where line_items.item_id = items.id AND line_items.user_id is ?)", user.id)
+    where("not exists (select id from line_items where line_items.item_id = items.id AND line_items.user_id = ?)", user.id)
   }
 
   scope :liked_by, lambda { |user|

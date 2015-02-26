@@ -8,13 +8,13 @@ module Api
           json = Item.unrated_by(current_user).paginate(page: item_params[:page]).as_json
         else
           json = Item.paginate(page: item_params[:page] || 1).as_json
-        end 
+        end
 
         render json: json
       end
-      
+
       private
-      
+
       def item_params
         {
           page: params[:page] || 1,
