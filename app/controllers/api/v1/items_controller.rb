@@ -2,15 +2,11 @@ module Api
   module V1
     class ItemsController < Api::V1::ApiController
       def index
-        if item_params[:liked]
-          json = Item.liked_by(current_user).paginate(page: item_params[:page] || 1).as_json
-        elsif item_params[:unrated]
-          json = Item.unrated_by(current_user).paginate(page: item_params[:page]).as_json
-        else
-          json = Item.paginate(page: item_params[:page] || 1).as_json
-        end
+        items = Item.where(nil)
+        items = items.liked_by(current_user) if item_params[:liked]
+        items = items.unrated_by(current_user) if item_params[:unrated]
 
-        render json: json
+        render json: json.paginate(page: item_params[:page] || 1).as_json
       end
 
       private

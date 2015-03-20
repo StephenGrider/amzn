@@ -16,14 +16,14 @@ class Item < ActiveRecord::Base
 
   scope :liked_by, lambda { |user|
     joins("left outer join line_items as i on items.id = i.item_id")
-    .where("i.liked is ?", true)
-    .where("i.user_id is ?", user.id)
+    .where("i.liked = ?", true)
+    .where("i.user_id = ?", user.id)
   }
 
   scope :disliked_by, lambda { |user|
     joins("left outer join line_items as i on items.id = i.item_id")
-    .where("i.liked is false")
-    .where("i.user_id is ?", user.id)
+    .where("i.liked = false")
+    .where("i.user_id = ?", user.id)
   }
 
   def is_liked?(user)
