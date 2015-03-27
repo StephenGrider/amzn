@@ -4,9 +4,10 @@ module Api
       def index
         items = Item.where(nil)
         items = items.liked_by(current_user) if item_params[:liked]
+        items = items.liked_by(current_user) if item_params[:disliked]
         items = items.unrated_by(current_user) if item_params[:unrated]
 
-        render json: json.paginate(page: item_params[:page] || 1).as_json
+        render json: items.paginate(page: item_params[:page]).as_json
       end
 
       private
@@ -14,9 +15,9 @@ module Api
       def item_params
         {
           page: params[:page] || 1,
-          liked: params[:liked] == "true" || false,
-          unliked: params[:unliked] == "true" || false,
-          unrated: params[:unrated] == "true" || false
+          liked: params[:liked] == "true",
+          disliked: params[:unliked] == "true",
+          unrated: params[:unrated == "true"]
         }
       end
     end
