@@ -26,8 +26,12 @@ class Item < ActiveRecord::Base
     .where("i.user_id = ?", user.id)
   }
 
+  scope :category, lambda { |category_id|
+    where(:category => category_id)
+  }
+
   def is_liked?(user)
-    user.items.include?(self)
+    user.line_items.where(item_id: self.id, liked: true).exists?
   end
 
   def category
