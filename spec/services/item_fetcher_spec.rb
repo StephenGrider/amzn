@@ -4,7 +4,7 @@ describe Services::Amazon::ItemFetcher do
   before do
     f = File.open(Rails.root + "spec/fixtures/amazon_response1.xml")
     @item = Amazon::Ecs::Response.new(f).items.first
-    @fetcher = Services::ItemFetcher.new
+    @fetcher = Services::Amazon::ItemFetcher.new
   end
 
   it "#get_asin" do
