@@ -4,8 +4,8 @@ describe Api::V1::ItemsController, :type => :controller do
   before do
     @user = create(:user)
 
-    @unliked_item = create(:item)
-    LineItem.create(item_id: @unliked_item.id, user_id: @user.id, liked: false)
+    @disliked_item = create(:item)
+    LineItem.create(item_id: @disliked_item.id, user_id: @user.id, liked: false)
 
     @liked_item = create(:item)
     LineItem.create(item_id: @liked_item.id, user_id: @user.id, liked: true)
@@ -23,7 +23,7 @@ describe Api::V1::ItemsController, :type => :controller do
         items = JSON.parse(response.body)
 
         expect(items.length).to eq(3)
-        expect(items[0]["id"]).to eq(@unliked_item.id)
+        expect(items[0]["id"]).to eq(@disliked_item.id)
         expect(items[1]["id"]).to eq(@liked_item.id)
         expect(items[2]["id"]).to eq(@unrated_item.id)
       end

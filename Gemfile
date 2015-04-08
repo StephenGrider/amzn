@@ -17,6 +17,7 @@ gem 'httparty'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'sendgrid'
+gem 'rails_param'
 
 
 group :development, :test do
