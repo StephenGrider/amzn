@@ -1,7 +1,7 @@
 <div class="row">
   <h3>Manually fetch a category</h3>
   <%= form_tag("/admin/fetch", method: "post") do %>
-    <%= label_tag(:category, "Search by category:") %>
+    <%= label_tag(:category, "Fetch by category:") %>
     <%= text_field_tag(:category) %>
     <%= submit_tag("Search") %>
   <% end %>
@@ -14,6 +14,9 @@
   <ul>
     <% @delayed_jobs.each do |job| %>
       <%= job %>
+    <% end %>
+    <% if @delayed_jobs.count == 0 %>
+      <em>There are no delayed jobs.</em>
     <% end %>
   </li>
 </div>
