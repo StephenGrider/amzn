@@ -1,12 +1,9 @@
 module Services
   class FetchManager
     def fetch
-
-      SearchNode.all.each do |node|
-        if node.vendor != 'Amazon'
-          opts = { page: last_page_fetched(node), category: node.vendor_id }
-          Services::Popshops::ItemFetcher.new(opts).do_request
-        end
+      SearchNode.where(vendor: 'Popshops').find_each do |node|
+        opts = { page: last_page_fetched(node), category: node.vendor_id }
+        Services::Popshops::ItemFetcher.new(opts).do_request
       end
     end
 
