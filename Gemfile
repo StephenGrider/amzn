@@ -18,7 +18,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'sendgrid'
 gem 'rails_param'
-
+gem 'delayed_job_recurring'
 
 group :development, :test do
   gem 'byebug'
