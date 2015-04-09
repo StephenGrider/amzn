@@ -34,7 +34,8 @@ module Services
           log = Log.new(
             success: true,
             page_fetched: get_page(res),
-            total_pages: get_total_pages(res)
+            total_pages: get_total_pages(res),
+            search_node_id: @req_opts[:query][:category]
           )
 
           begin
@@ -43,6 +44,7 @@ module Services
             item.price = get_price(response_item)
             item.image_url = get_image_url(response_item)
             item.url = get_url(response_item)
+            item.search_node_id = @req_opts[:query][:category]
             # item.brand = get_brand(response_item) TODO: fix brand/brand_id
             item.save!
           rescue Exception => e

@@ -27,7 +27,7 @@ class Item < ActiveRecord::Base
   }
 
   scope :category, lambda { |category_id|
-    where(:category => category_id)
+    where(category: category_id)
   }
 
   def is_liked?(user)
