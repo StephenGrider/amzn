@@ -75,7 +75,7 @@ SearchNode.create(
 )
 
 #############
-# Rakuten
+# Popshops
 #############
 
 SearchNode.create(
@@ -83,14 +83,14 @@ SearchNode.create(
   vendor_id: 25783,
   category: "Athletic Shoes",
   parent_category: "",
-  vendor: "Rakuten"
+  vendor: "Popshops"
 )
 
 SearchNode.create(
     vendor_id: 25869,
     category: "Boots",
     enabled: true,
-    vendor: "Rakuten",
+    vendor: "Popshops",
     parent_category: ""
 )
 
@@ -98,7 +98,7 @@ SearchNode.create(
     vendor_id: 25632,
     category: "Casual Shoes",
     enabled: true,
-    vendor: "Rakuten",
+    vendor: "Popshops",
     parent_category: ""
 )
 
@@ -106,7 +106,7 @@ SearchNode.create(
     vendor_id: 25703,
     category: "Sandals",
     enabled: true,
-    vendor: "Rakuten",
+    vendor: "Popshops",
     parent_category: ""
 )
 
@@ -114,6 +114,6 @@ SearchNode.create(
     vendor_id: 25743,
     category: "Slippers & Flip-Flops",
     enabled: true,
-    vendor: "Rakuten",
+    vendor: "Popshops",
     parent_category: ""
 )
