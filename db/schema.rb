@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150413160956) do
+ActiveRecord::Schema.define(version: 20150413162307) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   limit: 4,     default: 0, null: false
@@ -65,6 +65,14 @@ ActiveRecord::Schema.define(version: 20150413160956) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.integer  "search_node_id", limit: 4
+  end
+
+  create_table "reviewables", force: :cascade do |t|
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "item_id",        limit: 4
+    t.integer  "line_item_id",   limit: 4
+    t.integer  "share_queue_id", limit: 4
   end
 
   create_table "search_nodes", force: :cascade do |t|
