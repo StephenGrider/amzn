@@ -11,7 +11,7 @@ module Services
 
     def last_page_fetched(node)
       log = Log.searches_for_node(node).first
-      
+
       if log && log.page_fetched < log.total_pages
         1 + log.page_fetched
       else
