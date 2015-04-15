@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150413160956) do
+ActiveRecord::Schema.define(version: 20150415160133) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   limit: 4,     default: 0, null: false
@@ -45,11 +45,12 @@ ActiveRecord::Schema.define(version: 20150413160956) do
   end
 
   create_table "line_items", force: :cascade do |t|
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-    t.integer  "item_id",    limit: 4
-    t.integer  "user_id",    limit: 4
-    t.boolean  "liked",      limit: 1
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "item_id",        limit: 4
+    t.integer  "user_id",        limit: 4
+    t.boolean  "liked",          limit: 1
+    t.integer  "share_queue_id", limit: 4
   end
 
   add_index "line_items", ["item_id"], name: "index_line_items_on_item_id", using: :btree
