@@ -31,6 +31,7 @@ module Api
       def validate_params
         param! :item_id, Integer
         param! :liked, :boolean
+        param! :page, Integer, default: 1
       end
     end
   end
