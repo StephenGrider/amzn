@@ -12,11 +12,7 @@ module Api
       def create
         share_queue = build_queue
 
-        if share_queue
-          render json: share_queue
-        else
-          render json: { errors: share_queue.errors }, status: 422
-        end
+        render_json(share_queue, true)
       end
 
       private
@@ -28,6 +24,7 @@ module Api
         ActiveRecord::Base.transaction do
           params[:item_ids].each { |item_id| find_or_build_line_item(share_queue.id, item_id) }
         end
+        share_queue
       end
 
       def find_or_build_line_item(share_queue_id, item_id)

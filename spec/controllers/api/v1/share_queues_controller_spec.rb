@@ -62,9 +62,9 @@ describe Api::V1::ShareQueuesController, :type => :controller do
     it 'creates a queue with correct attributes' do
       post :create, @attrs
 
-      share_queue = ShareQueue.all.last
-      expect(share_queue.creator_id).to eq(@user.id)
-      expect(share_queue.recipient_id).to eq(@friend.id)
+      parsed_response = JSON.parse(response.body)
+      expect(parsed_response["creator_id"]).to eq(@user.id)
+      expect(parsed_response["recipient_id"]).to eq(@friend.id)
     end
 
     it 'creates a line_item' do

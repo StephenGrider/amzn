@@ -10,20 +10,13 @@ module Api
         attrs = { liked: params[:liked], item_id: params[:item_id] }
         line_item = current_user.line_items.build(attrs)
 
-        if line_item.save && current_user.id == line_item.user_id
-          render json: line_item
-        else
-          render json: { errors: line_item.errors }, status: 422
-        end
+        render_json(line_item, line_item.save && current_user.id == line_item.user_id)
       end
 
       def update
         line_item = LineItem.find_by_id(params[:id])
-        if line_item.update_attributes(liked: params[:liked])
-          render json: line_item
-        else
-          render json: { errors: line_item.errors }, status: 422
-        end
+
+        render_json(line_item, line_item.update_attributes(liked: params[:liked]))
       end
 
       def destroy
