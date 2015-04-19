@@ -4,13 +4,10 @@ describe Api::V1::LineItemsController, :type => :controller do
 
   before do
     @user = create(:user)
+    sign_in @user
   end
 
   describe '#index' do
-    before do
-      sign_in @user
-    end
-
     describe 'unfiltered' do
       it 'returns all line_items' do
         FactoryGirl.create_list(:line_item, 5)
@@ -26,10 +23,6 @@ describe Api::V1::LineItemsController, :type => :controller do
   end
 
   describe '#create' do
-    before do
-      sign_in @user
-    end
-
     context 'valid attributes' do
       attrs = nil
 
@@ -74,12 +67,21 @@ describe Api::V1::LineItemsController, :type => :controller do
     end
   end
 
+  describe '#update' do
+    before do
+      @line_item = FactoryGirl.create(:line_item, user_id: @user.id, liked: true)
+    end
+
+    it 'updates the model' do
+      put :update, id: @line_item.id, liked: false
+      @line_item.reload
+      expect(@line_item.liked).to be false
+    end
+  end
+
   describe '#destroy' do
     before do
-      sign_in @user
-      @line_item = FactoryGirl.create(:line_item)
-      @line_item.user_id = @user.id
-      @line_item.save
+      @line_item = FactoryGirl.create(:line_item, user_id: @user.id)
     end
 
     it 'destroys the model' do

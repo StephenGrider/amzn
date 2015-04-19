@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :line_items, :only => [:index, :create, :destroy]
 
   scope 'api/v1' do
-    resources :line_items, :only => [:index, :create, :destroy], controller: 'api/v1/line_items'
+    resources :line_items, :only => [:index, :create, :destroy, :update], controller: 'api/v1/line_items'
     resources :items, :only => [:index], controller: 'api/v1/items'
     resources :share_queues, :only => [:index, :create], controller: 'api/v1/share_queues'
   end

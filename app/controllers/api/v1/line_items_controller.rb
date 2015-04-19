@@ -17,6 +17,15 @@ module Api
         end
       end
 
+      def update
+        line_item = LineItem.find_by_id(params[:id])
+        if line_item.update_attributes(liked: params[:liked])
+          render json: line_item
+        else
+          render json: { errors: line_item.errors }, status: 422
+        end
+      end
+
       def destroy
         line_item = LineItem.find_by_id(params[:id])
         if line_item.can_destroy?(current_user)
@@ -29,6 +38,7 @@ module Api
       private
 
       def validate_params
+        param! :id, Integer
         param! :item_id, Integer
         param! :liked, :boolean
         param! :page, Integer, default: 1
