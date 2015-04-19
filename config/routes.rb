@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   scope 'api/v1' do
     resources :line_items, :only => [:index, :create, :destroy], controller: 'api/v1/line_items'
     resources :items, :only => [:index], controller: 'api/v1/items'
-    resources :share_queues, :only => [:index], controller: 'api/v1/share_queues'
+    resources :share_queues, :only => [:index, :create], controller: 'api/v1/share_queues'
   end
 
   scope 'admin' do

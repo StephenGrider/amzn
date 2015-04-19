@@ -13,6 +13,6 @@ class ShareQueue < ActiveRecord::Base
   }
 
   def complete?
-    line_items.where("liked IS ?", nil).empty?
+    line_items.where(liked: nil).empty?
   end
 end

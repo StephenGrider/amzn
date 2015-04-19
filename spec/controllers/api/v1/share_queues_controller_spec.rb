@@ -40,4 +40,55 @@ describe Api::V1::ShareQueuesController, :type => :controller do
       end
     end
   end
+
+  describe '#create' do
+    before do
+      @friend = create(:user)
+      @item = create(:item)
+
+      @attrs = {
+        creator_id: @user.id,
+        recipient_id: @friend.id,
+        item_ids: [@item.id]
+      }
+    end
+
+    it 'creates a new queue' do
+      expect {
+        post :create, @attrs
+      }.to change(ShareQueue, :count).by(1)
+    end
+
+    it 'creates a queue with correct attributes' do
+      post :create, @attrs
+
+      share_queue = ShareQueue.all.last
+      expect(share_queue.creator_id).to eq(@user.id)
+      expect(share_queue.recipient_id).to eq(@friend.id)
+    end
+
+    it 'creates a line_item' do
+      expect {
+        post :create, @attrs
+      }.to change(LineItem, :count).by(1)
+
+      expect(LineItem.all.last.item_id).to eq(@item.id)
+    end
+
+    context 'recipient has already reviewed this item' do
+      before do
+        @line_item = LineItem.create(user_id: @friend.id, item_id: @item.id, liked: true)
+      end
+
+      it 'clears the liked property' do
+        expect {
+          post :create, @attrs
+        }.to change(LineItem, :count).by(0)
+
+        @line_item.reload
+        expect(@line_item.liked).to be_nil
+        expect(ShareQueue.all.last.line_items[0]).to eq(@line_item)
+      end
+    end
+  end
 end
