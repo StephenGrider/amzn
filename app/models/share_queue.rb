@@ -5,11 +5,11 @@ class ShareQueue < ActiveRecord::Base
   validates :creator_id, presence: true
 
   scope :created_by, lambda { |user|
-    joins("inner join users on share_queues.creator_id = users.id")
+    where(creator_id: user.id)
   }
 
   scope :received_by, lambda { |user|
-    joins("inner join users on share_queues.recipient_id = users.id")
+    where(recipient_id: user.id)
   }
 
   def complete?
