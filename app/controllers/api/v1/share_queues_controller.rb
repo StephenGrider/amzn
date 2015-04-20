@@ -29,9 +29,7 @@ module Api
 
       def find_or_build_line_item(share_queue_id, item_id)
         line_item = LineItem.find_or_create_by(item_id: item_id, user_id: params[:recipient_id])
-        line_item.liked = nil
-        line_item.share_queue_id = share_queue_id
-        line_item.save
+        line_item.update_attributes(liked: nil, share_queue_id: share_queue_id)
       end
 
       def validate_params
