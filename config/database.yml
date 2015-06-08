@@ -1,0 +1,24 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: amzn
+  username: root
+  password: ''
+  host: 127.0.0.1
+  port: 3306
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: amzn
+  username: root
+  password: ''
+  host: 127.0.0.1
+  port: 3306
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: amzn
+  username: root
+  password: <%= ENV['APP_USER_MYSQL_PASSWORD'] %>
+  host: 127.0.0.1
+  port: 3306
