@@ -19,6 +19,7 @@ gem 'devise'
 gem 'sendgrid'
 gem 'rails_param'
 gem 'delayed_job_recurring'
+gem 'puma'
 
 group :development, :test do
   gem 'byebug'
@@ -31,11 +32,11 @@ group :development do
   gem 'pry-stack_explorer'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
-  gem 'capistrano', '~> 3.0.1'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails', '~> 1.1.0'
-  gem 'capistrano-rails-console'
-  gem 'capistrano-rvm', '~> 0.1.1'
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
