@@ -1,5 +1,4 @@
-# Change these
-server '104.236.128.142', port: your_port_num, roles: [:web, :app, :db], primary: true
+server '104.236.128.142', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:StephenGrider/amzn.git'
 set :application,     'amzn'
