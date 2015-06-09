@@ -20,5 +20,5 @@ production:
   database: amzn
   username: root
   password: <%= ENV['APP_USER_MYSQL_PASSWORD'] %>
-  host: 127.0.0.1
+  host: localhost
   port: 3306
